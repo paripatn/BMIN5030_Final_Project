@@ -16,14 +16,13 @@ Use this template to complete your project throughout the course. Your Final Pro
 
 Give a brief a description of your project and its goal(s), what data you are using to complete it, and what two faculty/staff in different fields you have spoken to about your project with a brief summary of what you learned from each person. Include a link to your final project GitHub repository.
 
-Ambience is an ambient AI documentation tool that records the conversation between the provider and patient and automatically drafts a clinical note in Epic for the provider to review and sign. Using time-stamped Epic clarity data from before and after go-live in the 7 Penn Emergency Departments, I will compare note completion time and after hours documentation. I spoke with Dr. Jeffrey Moon (aCMIO Penn Medicine) who helped define which documentation outcomes matter most clinically and Dr. Anish Agarwal who advised me on study design including the rollout structure. 
+Ambience is an ambient AI documentation tool that records the conversation between the provider and patient and automatically drafts a clinical note in Epic for the provider to review and sign. Using time-stamped Epic clarity data from before and after go-live in the 7 Penn Emergency Departments, I will compare note completion time and after hours documentation. I spoke with Dr. Jeffrey Moon (aCMIO Penn Medicine) who helped define which documentation outcomes matter most clinically and Dr. Anish Agarwal who advised me on study design including the rollout structure.
 
 ## Introduction {#sec-introduction}
 
 Describe the problem addressed, its significance, and some background to motivate the problem. This should extend what is in the @sec-overview.
 
-Clinical documentation takes up a large share of emergency physicians' time and is a major contributor to burnout. In the ED, notes are often finished after the patient leaves or after the shift ends, which delays the medical record and adds unpaid work. Ambient AI scribes such as Ambience listen to the patient encounter and draft the note automatically, and health systems are adopting them quickly. However, most published studies of ambient AI have focused on outpatient clinics, and few have examined its effect in the emergency department.Penn
-Medicine's rollout of Ambience across its emergency departments offers a chance to measure its real-world effect on documentation timeliness.
+Clinical documentation takes up a large share of emergency physicians' time and is a major contributor to burnout. In the ED, notes are often finished after the patient leaves or after the shift ends, which delays the medical record and adds unpaid work. Ambient AI scribes such as Ambience listen to the patient encounter and draft the note automatically, and health systems are adopting them quickly. However, most published studies of ambient AI have focused on outpatient clinics, and few have examined its effect in the emergency department.Penn Medicine's rollout of Ambience across its emergency departments offers a chance to measure its real-world effect on documentation timeliness.
 
 Explain why your problem is interdisciplinary, what fields can contribute to its understanding, and incorporate background related to what you learned from meeting with faculty/staff.
 
@@ -33,14 +32,23 @@ This problem is interdisciplinary because it draws on emergency medicine, clinic
 
 Describe the data used and general methodological approach used to address the problem described in the @sec-introduction. Subsequently, incorporate full R code necessary to retrieve and clean data, and perform analysis. Be sure to include a description of code so that others (including your future self) can understand what you are doing and why.
 
-
-Baseline data come from Epic Clarity, accessed through Penn Medicine's Databricks environment. The dataset includes 290 ED providers across six Penn Medicine emergency departments, totaling 108,072 encounters: HUP, HUP 54th and Cedar, PPMC, PAH, CCH and MCP. Providers include 179 physicians, 96 physician assistants and 15 nurse practitioners. For each provider, the data include the average and median time from patient rooming to note start, time from note start to signature, note length and number of contacts per note. Provider names and identifiers are removed before analysis, and the raw data are not stored on GitHub. These data cover [date range] and serve as the pre-Ambience baseline. Providers will be split into two groups: one starts Ambience in Period 1, and the other serves as a control in Period 1 and starts Ambience in Period 2.
+Baseline data come from Epic Clarity, accessed through Penn Medicine's Databricks environment. The dataset includes 290 ED providers across six Penn Medicine emergency departments, totaling 108,072 encounters: HUP, HUP 54th and Cedar, PPMC, PAH, CCH and MCP. Providers include 179 physicians, 96 physician assistants and 15 nurse practitioners. For each provider, the data include the average and median time from patient rooming to note start, time from note start to signature, note length and number of contacts per note. Provider names and identifiers are removed before analysis, and the raw data are not stored on GitHub. These data cover \[date range\] and serve as the pre-Ambience baseline. Providers will be split into two groups: one starts Ambience in Period 1, and the other serves as a control in Period 1 and starts Ambience in Period 2.
 
 ### Data
 
 ## Results {#sec-results}
 
 Describe your results and include relevant tables, plots, and code/comments used to obtain them. You may refer to the @sec-methods as needed. End with a brief conclusion of your findings related to the question you set out to address. You can include references if you'd like, but this is not required.
+
+Results will be presented in the following tables and figures once post-implementation data are available.
+
+**Table 1. Baseline provider characteristics by group.** Number of providers, provider type (physician, physician assistant, nurse practitioner), ED site, total encounters, and baseline median time from note start to signature, shown separately for the group starting Ambience in Period 1 and the group starting in Period 2. This table confirms the two groups are comparable at baseline.
+
+**Table 2. Primary outcome.** Median documentation time, from note creation to signature, for each group in each period, along with the estimated effect of Ambience versus control with a 95% confidence interval, adjusted for baseline documentation time.
+
+**Table 3. Secondary outcomes.** Time from disposition to note signature, and the percentage of notes signed within shift (under 8 hours), at 8-9 hours, and after shift (9 or more hours), by group and period.
+
+**Table 4. Subgroup analysis.** The primary outcome stratified by provider type and by ED site, to assess whether the effect of Ambience differs across these groups.
 
 ## Conclusion
 
